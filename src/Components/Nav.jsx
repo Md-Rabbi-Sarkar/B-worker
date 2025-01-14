@@ -1,8 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../Providers/AuthProvider'
 
 export default function Nav() {
-    const user = true;
+    const {user,logOut} =useContext(AuthContext)
+    const navigate = useNavigate()
+    const handleLogOut =() =>{
+        logOut()
+        .then(()=>{})
+        .catch(error=>console.log(error))
+        navigate('/')
+    }
     const navLink = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-Md-Rabbi-Sarkar'>Join as Developer</Link></li>
@@ -51,7 +59,7 @@ export default function Nav() {
                 {
                 user? 
                 <>
-                <button className='btn'><Link to='/logout'>LogOut</Link></button>
+                <button onClick={handleLogOut} className='btn'><Link to='/logout'>LogOut</Link></button>
                 </>
                 :
                 <>
