@@ -4,11 +4,13 @@ import { AuthContext } from '../Providers/AuthProvider';
 import { Result } from 'postcss';
 import { useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
+import useAxiosPublic from '../Hooks/useAxiosPublic';
 
 export default function Register() {
     const {createUser,updateUserProfile,googleSignIn} = useContext(AuthContext)
     const navigate=useNavigate()
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const axiosPublic = useAxiosPublic()
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data =>{
         console.log(data)
         createUser(data.email,data.password)
@@ -20,8 +22,17 @@ export default function Register() {
             .then(()=>{
                 const userInfo ={
                     name:data.name,
-                    email: data.email
+                    email: data.email,
+                    role:data.role
                 }
+                axiosPublic.post('/users',userInfo)
+                .then(res=>{
+                    if(res.data.insertedId){
+                        console.log('user added database')
+                        reset()
+                        navigate('/')
+                    }
+                })
             })
             .catch(error =>console.log(error))
         })

@@ -47,6 +47,10 @@ export default function Navigation() {
 
                                                 <NavLink to='dashboard/review'><FaAd></FaAd>Pruchase Coin</NavLink>
                                             </li>
+                                            <li>
+
+                                                <NavLink to='dashboard/review'><FaAd></FaAd>Payment History</NavLink>
+                                            </li>
                                             
                                         </>
                                         :
