@@ -1,9 +1,12 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Providers/AuthProvider'
+import useCoin from '../Hooks/useCoin'
 
 export default function Nav() {
     const {user,logOut} =useContext(AuthContext)
+    const [coin] =useCoin()
+    // console.log(coin)
     const navigate = useNavigate()
     const handleLogOut =() =>{
         logOut()
@@ -17,7 +20,7 @@ export default function Nav() {
         {user ?
                             <>
                             <li><Link to='/dashboard'>Dashboard</Link></li>
-                            <li><Link to='/coin'>Coin</Link></li>
+                            <li><Link to='/userCoin'>Coin ${coin.coins}</Link></li>
                             <li><Link to='/profile'>Profile</Link></li>
                             </>
                             :
