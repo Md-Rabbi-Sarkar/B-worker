@@ -1,10 +1,12 @@
 import React from 'react'
 import { FaAd, FaCalendar, FaHome, FaList, FaShoppingCart } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
+import useAdmin from '../../Hooks/useAdmin';
+import useBuyer from '../../Hooks/useBuyer';
 
 export default function Navigation() {
-    const isAdmin = false;
-    const isBuyer = false;
+    const [isAdmin] = useAdmin()
+    const [isBuyer] = useBuyer()
   return (
 
             <div className="w-64 min-h-screen bg-orange-400">
