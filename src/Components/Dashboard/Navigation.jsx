@@ -17,10 +17,10 @@ export default function Navigation() {
                                     <NavLink to='/dashboard/adminHome'><FaShoppingCart></FaShoppingCart> Home</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to='/dashboard/additems'><FaHome></FaHome>Manage Users</NavLink>
+                                    <NavLink to='/dashboard/manageUsers'><FaHome></FaHome>Manage Users</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to='/dashboard/manageItems'><FaCalendar></FaCalendar>Manage Task</NavLink>
+                                    <NavLink to='/dashboard/manageTasks'><FaCalendar></FaCalendar>Manage Task</NavLink>
                                 </li>
                             </>
                             :
@@ -50,10 +50,10 @@ export default function Navigation() {
                                                 <NavLink to='dashboard/cart'><FaShoppingCart></FaShoppingCart>Home </NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to='/dashboard/userHome'><FaHome></FaHome>Task List</NavLink>
+                                                <NavLink to='/dashboard/taskList'><FaHome></FaHome>Task List</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to='/dashboard/paymentsHistory'><FaCalendar></FaCalendar>My Submissions</NavLink>
+                                                <NavLink to='/dashboard/mySubmission'><FaCalendar></FaCalendar>My Submissions</NavLink>
                                             </li>
                                             <li>
                                                 <NavLink to='dashboard/review'><FaAd></FaAd>Withdrawals</NavLink>

@@ -8,6 +8,11 @@ import Addtask from "../Pages/Dashboard/Buyer/Addtask";
 import UserCoin from "../Pages/UserCoin";
 import Mytasks from "../Pages/Dashboard/Buyer/Mytasks";
 import UpdateTask from "../Pages/Dashboard/Buyer/UpdateTask";
+import TaskList from "../Pages/Dashboard/Worker/TaskList";
+import TaskDetails from "../Pages/Dashboard/Worker/TaskDetails";
+import MySubmission from "../Pages/Dashboard/Worker/MySubmission";
+import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers";
+import ManageTasks from "../Pages/Dashboard/Admin/ManageTasks";
 
 export const router = createBrowserRouter([
    {
@@ -36,6 +41,15 @@ export const router = createBrowserRouter([
     path:'/dashboard',
     element:<Dashboard></Dashboard>,
     children:[
+        //Admin Dashboard
+        {
+            path:'manageUsers',
+            element:<ManageUsers></ManageUsers>
+        },
+        {
+            path:'manageTasks',
+            element:<ManageTasks></ManageTasks>
+        },
         // Buyer Dashboard -----
         {
             path:'addNewTask',
@@ -49,6 +63,21 @@ export const router = createBrowserRouter([
             path:'updateTask/:id',
             element:<UpdateTask></UpdateTask>,
             loader:({params}) =>fetch(`http://localhost:5000/updateTask/${params.id}`)
+        },
+        //Worker dashboard
+        {
+            path:'taskList',
+            element:<TaskList></TaskList>,
+            loader:()=> fetch('http://localhost:5000/taskList')
+        },
+        {
+            path:'taskDetails/:id',
+            element:<TaskDetails></TaskDetails>,
+            loader:({params})=>fetch(`http://localhost:5000/tsskDetails/${params.id}`)
+        },
+        {
+            path:'mySubmission',
+            element:<MySubmission></MySubmission>,
         }
     ]
    }

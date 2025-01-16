@@ -75,7 +75,7 @@ export default function Register() {
                             <label className="label">
                                 <span className="label-text">Role</span>
                             </label>
-                            <select defaultChecked={'default'} {...register("role")}
+                            <select defaultValue={'default'} {...register("role")}
                                 className="select select-bordered w-full ">
                                 <option disabled value={'default'}>Select ROle</option>
                                 <option value="worker">Worker</option>
@@ -96,9 +96,7 @@ export default function Register() {
                             </label>
                             <input type="password" {...register("password", { required: true })} placeholder="password" className="input input-bordered" required />
                             {errors.password && <span>This field is required</span>}
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                            
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>

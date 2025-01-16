@@ -46,7 +46,9 @@ export default function Addtask() {
                 payableAmount:data.payableAmount,
                 completionDate:data.completionDate,
                 submissionInfo:data.submissionInfo,
-                taskImageUrl:res.data.data.display_url
+                taskImageUrl:res.data.data.display_url,
+                buyerName:user.displayName,
+                status:'pending'
             }
             const tasksRes = await axiosSecure.post('/taskItems',taskInfo)
             console.log(tasksRes.data)
