@@ -40,6 +40,7 @@ export default function Addtask() {
         if(res.data.success){
             const taskInfo = {
                 email:user.email,
+                name:user.displayName,
                 taskTitle:data.taskTitle,
                 taskDetail: data.taskDetail,
                 requiredWorks:data.requiredWorks,

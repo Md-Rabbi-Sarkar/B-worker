@@ -13,6 +13,13 @@ import TaskDetails from "../Pages/Dashboard/Worker/TaskDetails";
 import MySubmission from "../Pages/Dashboard/Worker/MySubmission";
 import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers";
 import ManageTasks from "../Pages/Dashboard/Admin/ManageTasks";
+import AdminHome from "../Pages/Dashboard/Admin/AdminHome";
+import BuyerHome from "../Pages/Dashboard/Buyer/BuyerHome";
+import WorkerHome from "../Pages/Dashboard/Worker/WorkerHome";
+import WithDrawal from "../Pages/Dashboard/Worker/WithDrawalForm";
+import PurchaseCoin from "../Pages/Dashboard/Buyer/PurchaseCoin";
+import CheckOutForm from "../Pages/Dashboard/Buyer/Component/CheckOutForm";
+import Payment from "../Pages/Dashboard/Buyer/Payment";
 
 export const router = createBrowserRouter([
    {
@@ -43,6 +50,10 @@ export const router = createBrowserRouter([
     children:[
         //Admin Dashboard
         {
+            path:'adminHome',
+            element:<AdminHome></AdminHome>
+        },
+        {
             path:'manageUsers',
             element:<ManageUsers></ManageUsers>
         },
@@ -51,6 +62,10 @@ export const router = createBrowserRouter([
             element:<ManageTasks></ManageTasks>
         },
         // Buyer Dashboard -----
+        {
+            path:'buyerHome',
+            element:<BuyerHome></BuyerHome>
+        },
         {
             path:'addNewTask',
             element:<Addtask></Addtask>
@@ -64,7 +79,19 @@ export const router = createBrowserRouter([
             element:<UpdateTask></UpdateTask>,
             loader:({params}) =>fetch(`http://localhost:5000/updateTask/${params.id}`)
         },
+        {
+            path:'purchaseCoin',
+            element:<PurchaseCoin></PurchaseCoin>
+        },
+        {
+            path:'payment',
+            element:<Payment></Payment>
+        },
         //Worker dashboard
+        {
+            path:'workerHome',
+            element:<WorkerHome></WorkerHome>
+        },
         {
             path:'taskList',
             element:<TaskList></TaskList>,
@@ -78,6 +105,10 @@ export const router = createBrowserRouter([
         {
             path:'mySubmission',
             element:<MySubmission></MySubmission>,
+        },
+        {
+            path:'withdrawals',
+            element:<WithDrawal></WithDrawal>
         }
     ]
    }

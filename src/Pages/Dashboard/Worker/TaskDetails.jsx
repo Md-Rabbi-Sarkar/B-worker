@@ -7,7 +7,7 @@ import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 export default function TaskDetails() {
     const {_id,taskTitle,taskDetail,requiredWorks,payableAmount,completionDate,
         submissionInfo,
-        taskImageUrl,email,buyerName,status} = useLoaderData()
+        taskImageUrl,email,buyerName,status,name} = useLoaderData()
     const {user} = useContext(AuthContext)
     const axiosSecure = useAxiosSecure()
     // console.log(taskDetail)
@@ -22,6 +22,8 @@ export default function TaskDetails() {
             workerName:user.displayName,
             buyerName,
             buyerEmail:email,
+            buyerName:name,
+            requiredWorks: requiredWorks,
             submissionDate:new Date(),
             status:'pending'
         }

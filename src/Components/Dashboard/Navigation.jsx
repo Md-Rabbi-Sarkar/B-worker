@@ -29,7 +29,7 @@ export default function Navigation() {
                                     isBuyer ?
                                         <>
                                             <li>
-                                                <NavLink to='dashboard/cart'><FaShoppingCart></FaShoppingCart>Home </NavLink>
+                                                <NavLink to='/dashboard/buyerHome'><FaShoppingCart></FaShoppingCart>Home </NavLink>
                                             </li>
                                             <li>
                                                 <NavLink to='/dashboard/addNewTask'><FaHome></FaHome>Add New Tasks</NavLink>
@@ -38,7 +38,7 @@ export default function Navigation() {
                                                 <NavLink to='/dashboard/myTasks'><FaCalendar></FaCalendar>My Task's</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to='dashboard/review'><FaAd></FaAd>Pruchase Coin</NavLink>
+                                                <NavLink to='/dashboard/purchaseCoin'><FaAd></FaAd>Purchase Coin</NavLink>
                                             </li>
                                             <li>
                                                 <NavLink to='dashboard/review'><FaAd></FaAd>Payment History</NavLink>
@@ -47,7 +47,7 @@ export default function Navigation() {
                                         :
                                         <>
                                             <li>
-                                                <NavLink to='dashboard/cart'><FaShoppingCart></FaShoppingCart>Home </NavLink>
+                                                <NavLink to='/dashboard/workerHome'><FaShoppingCart></FaShoppingCart>Home </NavLink>
                                             </li>
                                             <li>
                                                 <NavLink to='/dashboard/taskList'><FaHome></FaHome>Task List</NavLink>
@@ -56,7 +56,7 @@ export default function Navigation() {
                                                 <NavLink to='/dashboard/mySubmission'><FaCalendar></FaCalendar>My Submissions</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to='dashboard/review'><FaAd></FaAd>Withdrawals</NavLink>
+                                                <NavLink to='/dashboard/withdrawals'><FaAd></FaAd>Withdrawals</NavLink>
                                             </li>
                                         </>
                                 }
