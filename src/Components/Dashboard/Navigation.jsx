@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import useAdmin from '../../Hooks/useAdmin';
 import useBuyer from '../../Hooks/useBuyer';
 
+
 export default function Navigation() {
     const [isAdmin] = useAdmin()
     const [isBuyer] = useBuyer()
@@ -21,6 +22,7 @@ export default function Navigation() {
                                 </li>
                                 <li>
                                     <NavLink to='/dashboard/manageTasks'><FaCalendar></FaCalendar>Manage Task</NavLink>
+                                   
                                 </li>
                             </>
                             :
@@ -57,6 +59,7 @@ export default function Navigation() {
                                             </li>
                                             <li>
                                                 <NavLink to='/dashboard/withdrawals'><FaAd></FaAd>Withdrawals</NavLink>
+                                               
                                             </li>
                                         </>
                                 }

@@ -8,7 +8,7 @@ import useAxiosSecure from '../../../../Hooks/useAxiosSecure'
 export default function CheckOutForm() {
   const stripePromise = loadStripe(import.meta.env.VITE_Payment_Getway_pK)
     const location = useLocation()
-    const coin = location.state?.coin || 'No card Selected'
+    const coin = location.state?.coin 
     
     const [error, setError] = useState('')
     const stripe = useStripe()
@@ -19,7 +19,7 @@ export default function CheckOutForm() {
     const [transactionId, setTransactionId] = useState('')
     useEffect(()=>{
         if(coin>0){
-        axiosSecuire.post('/create-payment-intent',{coin})
+        axiosSecuire.post('/create-payment-intent',{coin:coin})
         .then(res=>{
             steClientSecret(res.data.clientSecret)
         })}

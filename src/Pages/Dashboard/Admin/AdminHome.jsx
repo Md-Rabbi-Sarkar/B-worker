@@ -1,6 +1,7 @@
 import React from 'react'
 import useAxiosSecure from '../../../Hooks/useAxiosSecure'
 import { useQuery } from '@tanstack/react-query'
+import Wirhdraw from './Wirhdraw'
 const axiosSecure = useAxiosSecure()
 
 export default function AdminHome() {
@@ -13,7 +14,8 @@ export default function AdminHome() {
         }
     })
   return (
-    <div className="stats shadow">
+    <div>
+      <div className="stats shadow">
   <div className="stat">
     <div className="stat-figure text-secondary">
       <svg
@@ -71,5 +73,9 @@ export default function AdminHome() {
     <div className="stat-desc">↘︎ 90 (14%)</div>
   </div>
 </div>
+<div>
+  <Wirhdraw></Wirhdraw>
+</div>
+    </div>
   )
 }

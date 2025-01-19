@@ -20,6 +20,7 @@ import WithDrawal from "../Pages/Dashboard/Worker/WithDrawalForm";
 import PurchaseCoin from "../Pages/Dashboard/Buyer/PurchaseCoin";
 import CheckOutForm from "../Pages/Dashboard/Buyer/Component/CheckOutForm";
 import Payment from "../Pages/Dashboard/Buyer/Payment";
+import Notifications from "../Pages/Dashboard/Worker/Notifications";
 
 export const router = createBrowserRouter([
    {
@@ -109,6 +110,10 @@ export const router = createBrowserRouter([
         {
             path:'withdrawals',
             element:<WithDrawal></WithDrawal>
+        },
+        {
+            path:'notifications',
+            element:<Notifications></Notifications>
         }
     ]
    }

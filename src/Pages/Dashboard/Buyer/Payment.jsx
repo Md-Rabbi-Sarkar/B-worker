@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom'
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Getway_pK)
 export default function Payment() {
     const location = useLocation()
-    const coin = location.state?.coin || 'No card Selected'
+    const coin = location.state?.coin
     console.log(coin)
   return (
     <div>

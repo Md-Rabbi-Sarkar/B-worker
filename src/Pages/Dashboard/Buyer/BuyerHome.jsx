@@ -14,18 +14,41 @@ export default function BuyerHome() {
       return res.data
     }
   })
-  const handleClick = async (id, email, payAmount) => {
+  const handleClick = async (id, email, payAmount,taskTitle,buyerName) => {
     const info = {
       workerEmail: email,
       payAbleAmount: payAmount
     }
     const res = await axiosSecure.put(`/approveTask/${id}`, info)
     console.log(res.data)
+    if(res.data.result.modifiedCount>0){
+      const info = {
+        message:`You have earned ${payAmount} from ${buyerName} for completing ${taskTitle}` ,
+       ToEmail: email,
+       Time: new Date(),
+       workerEmail:email,
+        status:'unseen'
+      }
+      const res= await axiosSecure.post('/notifications',info)
+      console.log(res.data)
+      
+    }
   }
-  const handleDelete = async (id, email) => {
+  const handleDelete = async (id, email,taskTitle,workerEmail,payableAmount,buyerName) => {
     const info = { email }
     const res = await axiosSecure.put(`/rejectTask/${id}`, info)
     console.log(res.data)
+    if(res.data.result.modifiedCount>0){
+      const info={
+        message: `You are rejected the Taskname ${taskTitle} by ${buyerName}`,
+       ToEmail: email,
+        Time: new Date(),
+        workerEmail:email,
+        status: 'unseen'
+      }
+      const res = await axiosSecure.post('/notifications',info)
+      console.log(res.data)
+    }
   }
   return (
     <div>
@@ -109,8 +132,8 @@ export default function BuyerHome() {
               <td>{task.taskTitle}</td>
               <td>{task.payableAmount}</td>
               <td>{task.submissionDetails}</td>
-              <td onClick={() => handleClick(task._id, task.workerEmail, task.payableAmount)}>Approve</td>
-              <td onClick={() => handleDelete(task._id, task.buyerEmail)}>Reject</td>
+              <td onClick={() => handleClick(task._id, task.workerEmail, task.payableAmount,task.taskTitle,task.buyerName)}>Approve</td>
+              <td onClick={() => handleDelete(task._id, task.buyerEmail,task.taskTitle,task.workerEmail,task.payAbleAmount,task.buyerName)}>Reject</td>
 
             </tr>)}
 

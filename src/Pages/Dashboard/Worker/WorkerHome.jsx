@@ -4,12 +4,15 @@ import { useQuery } from '@tanstack/react-query'
 import { AuthContext } from '../../../Providers/AuthProvider'
 import States from './component/States'
 
+import Notifications from '../NotificationsIcon'
+import NotificationsIcon from '../NotificationsIcon'
+
 export default function WorkerHome() {
   const axiosSecure = useAxiosSecure()
-  const {user} =useContext(AuthContext)
-  const {data: workerApprovedTask = []} =useQuery({
-    queryKey:['workerApproveTask'],
-    queryFn: async ()=>{
+  const { user } = useContext(AuthContext)
+  const { data: workerApprovedTask = [] } = useQuery({
+    queryKey: ['workerApproveTask'],
+    queryFn: async () => {
       const res = await axiosSecure.get(`/workerApproveTask?email=${user.email}`)
       return res.data
     }
@@ -17,31 +20,32 @@ export default function WorkerHome() {
   return (
     <div>
       <div>
-      <States></States>
+        <States></States>
       </div>
       <div className="overflow-x-auto">
-  <table className="table">
-    {/* head */}
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-      </tr>
-    </thead>
-    <tbody>
-      {workerApprovedTask.map((task,index)=><tr key={task._id}>
-        <th>{index+1}</th>
-        <td>{task.taskTitle}</td>
-        <td>{task.payableAmount}</td>
-        <td>{task.buyerName}</td>
-      </tr>)}
-      
-    </tbody>
-  </table>
-</div>
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Job</th>
+              <th>Favorite Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            {workerApprovedTask.map((task, index) => <tr key={task._id}>
+              <th>{index + 1}</th>
+              <td>{task.taskTitle}</td>
+              <td>{task.payableAmount}</td>
+              <td>{task.buyerName}</td>
+            </tr>)}
+
+          </tbody>
+        </table>
+      </div>
+      <NotificationsIcon></NotificationsIcon>
     </div>
-    
+
   )
 }
