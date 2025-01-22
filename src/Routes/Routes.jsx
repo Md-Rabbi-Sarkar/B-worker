@@ -21,6 +21,7 @@ import PurchaseCoin from "../Pages/Dashboard/Buyer/PurchaseCoin";
 import CheckOutForm from "../Pages/Dashboard/Buyer/Component/CheckOutForm";
 import Payment from "../Pages/Dashboard/Buyer/Payment";
 import Notifications from "../Pages/Dashboard/Worker/Notifications";
+import PaymentHistory from "../Pages/Dashboard/Buyer/PaymentHistory";
 
 export const router = createBrowserRouter([
    {
@@ -87,6 +88,10 @@ export const router = createBrowserRouter([
         {
             path:'payment',
             element:<Payment></Payment>
+        },
+        {
+            path:'paymentHistory',
+            element:<PaymentHistory></PaymentHistory>
         },
         //Worker dashboard
         {
