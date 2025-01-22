@@ -1,15 +1,9 @@
 import { CardElement, Elements, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
 import React, { useContext, useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
 import { AuthContext } from '../../../../Providers/AuthProvider'
 import useAxiosSecure from '../../../../Hooks/useAxiosSecure'
 
-export default function CheckOutForm() {
-  const stripePromise = loadStripe(import.meta.env.VITE_Payment_Getway_pK)
-    const location = useLocation()
-    const coin = location.state?.coin 
-    
+export default function CheckOutForm({coin}) {
     const [error, setError] = useState('')
     const stripe = useStripe()
     const {user} = useContext(AuthContext)
@@ -19,27 +13,33 @@ export default function CheckOutForm() {
     const [transactionId, setTransactionId] = useState('')
     useEffect(()=>{
         if(coin>0){
-        axiosSecuire.post('/create-payment-intent',{coin:coin})
+        axiosSecuire.post('/create-payment-intent',{price:coin})
         .then(res=>{
+          console.log(res.data.clientSecret)
             steClientSecret(res.data.clientSecret)
         })}
     },[axiosSecuire,coin])
     // console.log(coin)
     const handleSubmit=async (e)=>{
+      e.preventDefault()
         if(!stripe || !elements){
-            return
+            return console.log('s')
         }
         const card = elements.getElement(CardElement)
         if(card === null){
-            return
+            return console.log('t')
         }
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type:'card',
             card
         })
         if(error){
-            console.log('pay error',paymentMethod)
-            setError('')
+            console.log('pay error',error)
+            setError(error.message)
+        }
+        else{
+          console.log('paymentMethode',paymentMethod)
+          setError('')
         }
         const {paymentIntent,error:confirmError} = await stripe.confirmCardPayment(clientSecret,{
             payment_method:{
@@ -73,8 +73,8 @@ export default function CheckOutForm() {
     }
   return (
     <div>
-        <Elements stripe ={stripePromise}>
-        <div>
+        
+       
         <form onSubmit={handleSubmit}>
         <CardElement
           options={{
@@ -96,10 +96,10 @@ export default function CheckOutForm() {
           Pay
         </button>
         <p className='bg-red-600'>{error}</p>
-        {transactionId && <p className='text-green-500'>Your Transaction id: {transactionId}</p>}
+        {/* {transactionId && <p className='text-green-500'>Your Transaction id: {transactionId}</p>} */}
         </form>
     </div>
-        </Elements>
-    </div>
+        
+   
   )
 }

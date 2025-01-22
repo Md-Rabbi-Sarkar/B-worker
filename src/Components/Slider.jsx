@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 export default function Slider() {
     return (
         <Carousel>
-            <div>
+            <div data-aos="flip-left">
                 <img src={slider1} />
                 <h1 className='text-3xl'>"Your Time, Your Earnings"</h1>
                 <p>Your Gateway to Micro Earnings</p>

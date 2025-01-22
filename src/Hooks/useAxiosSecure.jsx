@@ -14,7 +14,7 @@ export default function useAxiosSecure() {
     axiosSecure.interceptors.response.use(function(response){
         return response
     },async(error)=>{
-        const status = error.response.status 
+        const status = error?.response?.status 
         console.log('status error',status)
         return Promise.reject(error)
     })

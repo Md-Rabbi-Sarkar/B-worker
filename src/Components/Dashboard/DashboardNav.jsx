@@ -1,12 +1,27 @@
-import React from 'react'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import useAxiosSecure from '../../Hooks/useAxiosSecure'
+import { AuthContext } from '../../Providers/AuthProvider'
 
 export default function DashboardNav() {
+    const axiosSecure = useAxiosSecure()
+    const {user} = useContext(AuthContext)
+    const {data: userInfo=[]}= useQuery({
+        queryKey:['userInfo'],
+        queryFn: async () =>{
+            const res = await axiosSecure.get(`/userInfo?email=${user.email}`)
+            // console.log(res.data)
+            return res.data
+        }
+    })
     const navLink = <>
         <div className='flex flex-col md:flex-row gap-3'>
-            <li>COin </li>
-            <li>Role </li>
-            <li>Name</li>
+            <li>{userInfo.coin} </li>
+            <img src={user?.photoURL} alt="" />
+            <li>{userInfo.role} </li>
+            <li>{userInfo.name}</li>
             <li><img src="" alt="" /></li>
         </div>
 

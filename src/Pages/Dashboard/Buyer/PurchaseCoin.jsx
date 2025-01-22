@@ -3,8 +3,6 @@ import { Link, replace, useNavigate } from 'react-router-dom'
 
 export default function PurchaseCoin() {
     const navigate = useNavigate()
-    const [coins, setCoin] = useState('')
-    console.log(coins)
     const cards = [
         { id: 1, coin: 10 ,dollar:1},
         { id: 2, coin: 150,dollar:10 },
@@ -12,8 +10,7 @@ export default function PurchaseCoin() {
         { id: 4, coin: 1000,dollar:35 },
       ];
       const handleClidk = coin=>{
-        setCoin(coin)
-        navigate('/dashboard/payment',{state: {coins}} )
+        navigate('/dashboard/payment',{state: {coin}, replace} )
       }
     
     return (

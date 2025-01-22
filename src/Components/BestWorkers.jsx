@@ -15,7 +15,7 @@ export default function BestWorkers() {
     }
   })
   return (
-    <div>
+    <div data-aos="flip-left">
       {bestWorker.map(worker => <div key={worker._id} className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
           <img
