@@ -44,23 +44,18 @@ export default function WithDrawalForm() {
 
   return (
     <div>
-      <div>
+      <div className='mb-5'>
       <div className="stats bg-primary text-primary-content">
             <div className="stat">
                 <div className="stat-title">Account balance</div>
-                <div className="stat-value">{workerCoin.coin}</div>
-                <div className="stat-actions">
-                    <button className="btn btn-sm btn-success">Add funds</button>
-                </div>
+                <div className="stat-value">Coin: {workerCoin.coin}</div>
+                
             </div>
 
             <div className="stat">
                 <div className="stat-title">WithDrawals balance</div>
-                <div className="stat-value">{withdrawalCoin}</div>
-                <div className="stat-actions">
-                    <button className="btn btn-sm">Withdrawal</button>
-                    <button className="btn btn-sm">Deposit</button>
-                </div>
+                <div className="stat-value">${withdrawalCoin}</div>
+                
             </div>
         </div>
       </div>
@@ -68,10 +63,9 @@ export default function WithDrawalForm() {
          <div className="hero bg-base-200 min-h-screen">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <h1 className="text-5xl font-bold">Login now!</h1>
+                            <h1 className="text-5xl font-bold">Withdraw Now!</h1>
                             <p className="py-6">
-                                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                                quasi. In deleniti eaque aut repudiandae et a id nisi.
+                            You've worked hard, completed tasks, and earned your rewards—now it’s time to enjoy the fruits of your labor. 💸
                             </p>
                         </div>
                         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -91,7 +85,7 @@ export default function WithDrawalForm() {
                                     {/* {errors.photoUrl && <span>This field is required</span>} */}
                                 </div>
                                 <div className="form-control">
-                                    <label className="label">
+                                    <label className="label"> 
                                         <span className="label-text">Payment SYstem</span>
                                     </label>
                                     <select defaultValue={'default'} {...register("paymentSystem")}

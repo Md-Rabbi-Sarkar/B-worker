@@ -29,16 +29,19 @@ export default function WorkerHome() {
             <tr>
               <th></th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Task Title</th>
+              <th>Payable Amount</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
             {workerApprovedTask.map((task, index) => <tr key={task._id}>
               <th>{index + 1}</th>
+              <td>{task.buyerName}</td>
               <td>{task.taskTitle}</td>
               <td>{task.payableAmount}</td>
-              <td>{task.buyerName}</td>
+              <td>{task.status}</td>
+              
             </tr>)}
 
           </tbody>

@@ -22,11 +22,14 @@ import CheckOutForm from "../Pages/Dashboard/Buyer/Component/CheckOutForm";
 import Payment from "../Pages/Dashboard/Buyer/Payment";
 import Notifications from "../Pages/Dashboard/Worker/Notifications";
 import PaymentHistory from "../Pages/Dashboard/Buyer/PaymentHistory";
+import Error from "../Pages/Error";
+import Forbidden from "../Pages/Forbidden";
 
 export const router = createBrowserRouter([
    {
     path:'/',
     element:<Main></Main>,
+    errorElement:<Error></Error>,
     children: [
         {
             path:'/',
@@ -49,6 +52,7 @@ export const router = createBrowserRouter([
    {
     path:'/dashboard',
     element:<Dashboard></Dashboard>,
+    errorElement:<Error></Error>,
     children:[
         //Admin Dashboard
         {
@@ -119,6 +123,10 @@ export const router = createBrowserRouter([
         {
             path:'notifications',
             element:<Notifications></Notifications>
+        },
+        {
+            path:'forbidden',
+            element:<Forbidden></Forbidden>
         }
     ]
    }

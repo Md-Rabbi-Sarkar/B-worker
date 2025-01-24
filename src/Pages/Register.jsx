@@ -9,6 +9,7 @@ import useAxiosPublic from '../Hooks/useAxiosPublic';
 export default function Register() {
     const {createUser,updateUserProfile,googleSignIn} = useContext(AuthContext)
     const navigate=useNavigate()
+    // const {user:loginuser} = useContext(AuthContext)
     const axiosPublic = useAxiosPublic()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data =>{
@@ -23,7 +24,8 @@ export default function Register() {
                 const userInfo ={
                     name:data.name,
                     email: data.email,
-                    role:data.role
+                    role:data.role,
+                    photoUrl:user.photoURL
                 }
                 axiosPublic.post('/users',userInfo)
                 .then(res=>{

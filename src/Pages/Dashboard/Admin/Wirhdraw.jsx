@@ -21,13 +21,14 @@ export default function Wirhdraw() {
         console.log(res.data)
     }
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto mt-10">
   <table className="table">
     {/* head */}
     <thead>
       <tr>
-        <th></th>
+        <th>#</th>
         <th>Name</th>
+        <th>Amount</th>
         <th>status</th>
         <th>action</th>
       </tr>
@@ -35,6 +36,7 @@ export default function Wirhdraw() {
     <tbody>
       {withdraw.map((item,index)=><tr key={item._id}>
         <th>{index+1}</th>
+        <th>{item.workerName}</th>
         <td>${item.withdrawAmounts}</td>
         <td>{item.status}</td>
         <td onClick={()=>handleClick(item._id,item.workerEmail,item.withdrawCoin)}>Approve</td>

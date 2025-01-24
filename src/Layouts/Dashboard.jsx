@@ -11,7 +11,7 @@ export default function Dashboard() {
             <DashboardNav></DashboardNav>
             <div className='flex'>
                 <Navigation></Navigation>
-                <div className='flex-1 p-8'>
+                <div className='flex-1 p-8 relative'>
                 <Outlet></Outlet>
             </div>
             </div>

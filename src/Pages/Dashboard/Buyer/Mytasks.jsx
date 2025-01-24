@@ -50,8 +50,8 @@ export default function Mytasks() {
                     <tr>
                         <th>#</th>
                         <th>TaskTitle</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
+                        <th>Update</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -33,9 +33,9 @@ export default function States() {
           d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg>
     </div>
-    <div className="stat-title">Total Submit</div>
+    <div className="stat-title">Total Submission</div>
     <div className="stat-value">{workerpendingTask.allWorker}</div>
-    <div className="stat-desc">Jan 1st - Feb 1st</div>
+    
   </div>
 
   <div className="stat">
@@ -54,7 +54,7 @@ export default function States() {
     </div>
     <div className="stat-title">Pending Submission</div>
     <div className="stat-value">{workerpendingTask.allpendingWorker}</div>
-    <div className="stat-desc">↗︎ 400 (22%)</div>
+    
   </div>
 
   <div className="stat">
@@ -71,9 +71,9 @@ export default function States() {
           d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
       </svg>
     </div>
-    <div className="stat-title">TOtal Earning</div>
-    <div className="stat-value">{workerpendingTask.totalpayablecoin}</div>
-    <div className="stat-desc">↘︎ 90 (14%)</div>
+    <div className="stat-title">T0tal Earning</div>
+    <div className="stat-value">$ {workerpendingTask.totalpayablecoin}</div>
+    
   </div>
 </div>
   )

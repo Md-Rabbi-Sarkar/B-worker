@@ -50,8 +50,8 @@ export default function MySubmission() {
       <tr>
         <th>#</th>
         <th>Task Title</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>Date</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
@@ -65,7 +65,7 @@ export default function MySubmission() {
       
     </tbody>
   </table>
-  <div>
+  <div className='absolute bottom-5 left-1/2'>
   <button onClick={handlePre} className="join-item btn btn-outline">Previous</button>
     {pages.map(page=>  <button className={currentPage ===page ?'join-item btn btn-active' :'join-item btn'} key={page} onClick={()=>setCurrentPage(page)}>{page}</button>)}
     <button onClick={handleNext} className="join-item btn btn-outline">Next</button>
