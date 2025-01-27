@@ -19,7 +19,8 @@ export default function WorkerHome() {
   })
   return (
     <div>
-      <div>
+      <div className='mb-10
+      '>
         <States></States>
       </div>
       <div className="overflow-x-auto">

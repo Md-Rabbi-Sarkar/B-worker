@@ -15,16 +15,17 @@ export default function BestWorkers() {
     }
   })
   return (
-    <div data-aos="flip-left">
-      {bestWorker.map(worker => <div key={worker._id} className="card lg:card-side bg-base-100 shadow-xl">
+    <div >
+      <h1 className='text-5xl my-10'>Best Worker</h1>
+      {bestWorker.map(worker => <div data-aos="flip-left" key={worker._id} className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
           <img
             src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
             alt="Album" />
         </figure>
-        <div className="card-body ">
-          <h2 className="card-title ">{worker.name}</h2>
-          <p>{worker.coin}</p>
+        <div className="card-body flex flex-col justify-center items-center">
+          <h2>Worker Name: {worker.name}</h2>
+          <p>Worker Coin: {worker.coin}</p>
         </div>
       </div>)}
     </div>

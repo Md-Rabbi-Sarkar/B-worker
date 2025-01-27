@@ -5,6 +5,7 @@ import WorkerCal from './component/WorkerCal'
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
+import Swal from 'sweetalert2';
 
 export default function WithDrawalForm() {
   const { user } = useContext(AuthContext)
@@ -38,7 +39,15 @@ export default function WithDrawalForm() {
        status:'pending'
       }
       const res = await axiosSecure.post ('/withdrawRequest',info)
-      console.log(res.data)
+      if(res.data.acknowledged){
+                  Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "Your Request has been granted , Plz wait until respons form Admin",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+              }
     }
   
 

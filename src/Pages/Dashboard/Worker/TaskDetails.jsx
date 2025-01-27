@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../../../Providers/AuthProvider';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 export default function TaskDetails() {
     const { _id, taskTitle, taskDetail, requiredWorks, payableAmount, completionDate,
@@ -28,8 +29,15 @@ export default function TaskDetails() {
             status: 'pending'
         }
         const res = await axiosSecure.post('/submitTask', submitInfo)
-        console.log(res.data)
-
+        if(res.data.acknowledged){
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your submission has been granted , Plz wait until respons form Buyer",
+                showConfirmButton: false,
+                timer: 1500
+              });
+        }
     }
     return (
         <div className="card bg-base-100 w-96 shadow-xl">

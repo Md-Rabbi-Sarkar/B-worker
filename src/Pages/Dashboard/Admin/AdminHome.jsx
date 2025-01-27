@@ -4,9 +4,10 @@ import { useQuery } from '@tanstack/react-query'
 import Wirhdraw from './Wirhdraw'
 import { CiCoinInsert, CiCoins1 } from 'react-icons/ci'
 import { GiCementShoes } from 'react-icons/gi'
-const axiosSecure = useAxiosSecure()
+
 
 export default function AdminHome() {
+  const axiosSecure = useAxiosSecure()
   const { data: total = [] } = useQuery({
     queryKey: ['totalCount'],
     queryFn: async () => {

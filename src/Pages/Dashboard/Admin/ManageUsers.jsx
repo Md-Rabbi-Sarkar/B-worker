@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import useAxiosSecure from '../../../Hooks/useAxiosSecure'
 import { useQuery } from '@tanstack/react-query'
 import { AuthContext } from '../../../Providers/AuthProvider'
-const axiosSecure = useAxiosSecure()
+
 
 export default function ManageUsers() {
     const axiosSecure = useAxiosSecure()
