@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Providers/AuthProvider'
 import useCoin from '../Hooks/useCoin'
 
 export default function Nav() {
     const {user,logOut} =useContext(AuthContext)
+    const [theme, setTheme] = useState("light")
     const [coin] =useCoin()
     // console.log(coin)
     const navigate = useNavigate()
@@ -27,6 +28,17 @@ export default function Nav() {
                             <>
                             </>}
     </>
+      useEffect(() => {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        setTheme(savedTheme);
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }, []);
+      const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      };
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -58,6 +70,11 @@ export default function Nav() {
                     {navLink}
                 </ul>
             </div>
+            <div className="theme-toggle flex items-end ml-5">
+        <button onClick={toggleTheme}>
+          {theme === "dark" ? "🌞" : "🌙"}
+        </button>
+      </div>
             <div className="navbar-end">
                 {
                 user? 
