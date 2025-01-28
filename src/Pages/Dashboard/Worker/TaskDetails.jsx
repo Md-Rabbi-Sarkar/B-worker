@@ -37,6 +37,14 @@ export default function TaskDetails() {
                 showConfirmButton: false,
                 timer: 1500
               });
+              const info = {
+                message: `You have new submission for Taskname ${taskTitle} by email: ${user.email}`,
+                ToEmail:email,
+                Time: new Date(),
+                status: 'unseen'
+              }
+              const res = await axiosSecure.post('/notifications', info)
+              // console.log(res.data)
         }
     }
     return (

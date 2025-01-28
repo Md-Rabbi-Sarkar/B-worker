@@ -26,7 +26,6 @@ export default function BuyerHome() {
         message: `You have earned ${payAmount} from ${buyerName} for completing ${taskTitle}`,
         ToEmail: email,
         Time: new Date(),
-        workerEmail: email,
         status: 'unseen'
       }
       const res = await axiosSecure.post('/notifications', info)
@@ -41,9 +40,8 @@ export default function BuyerHome() {
     if (res.data.result.modifiedCount > 0) {
       const info = {
         message: `You are rejected the Taskname ${taskTitle} by ${buyerName}`,
-        ToEmail: email,
+        ToEmail: workerEmail,
         Time: new Date(),
-        workerEmail: email,
         status: 'unseen'
       }
       const res = await axiosSecure.post('/notifications', info)

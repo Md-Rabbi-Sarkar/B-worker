@@ -17,7 +17,7 @@ export default function NotificationsIcon() {
     }
   })
   const handleClick= async () =>{
-    const res = await axiosSecure.put(`/notiStatus?email=${user.email}`,{bal:'dd'})
+    const res = await axiosSecure.put(`/notiStatus?email=${user.email}`)
   // console.log(res.data)
   }
   return (
@@ -28,7 +28,8 @@ export default function NotificationsIcon() {
                 />
         <button className="btn rounded-full">
         <IoIosNotifications />
-          <div  className="badge badge-secondary">{recentNotification.result}</div>
+          <div  className="badge badge-secondary">{recentNotification.result
+            }</div>
         </button>
       </Container>
     </div>

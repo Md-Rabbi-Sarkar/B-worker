@@ -47,7 +47,17 @@ export default function WithDrawalForm() {
                       showConfirmButton: false,
                       timer: 1500
                     });
+                    const info = {
+                        message: `You have new withdraw request by email: ${user.email}`,
+                        role:'admin',
+                        Time: new Date(),
+                        workerEmail: user.email,
+                        status: 'unseen'
+                      }
+                      const res = await axiosSecure.post('/notifications', info)
+                      console.log(res.data)
               }
+
     }
   
 
