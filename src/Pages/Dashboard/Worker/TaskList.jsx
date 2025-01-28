@@ -6,11 +6,13 @@ export default function TaskList() {
   return (
     <div>
       {taskList.map((task, index) => <div key={task._id} className="card lg:card-side bg-base-100 shadow-xl">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+        <div className="">
+          <img className='w-screen h-1/2 px-10 object-cover'
+            src={task.
+              taskImageUrl
+              }
             alt="Album" />
-        </figure>
+        </div>
         <div className="card-body">
           <h2 className="card-title">Task Title: {task.taskTitle}</h2>
           <p>Buyer Name: {task.buyerName}</p>

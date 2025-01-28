@@ -66,7 +66,7 @@ export default function CheckOutForm({coin}) {
                     status:'pending'
                 }
                 const res = await axiosSecuire.post('/payments',payment)
-                console.log(res.data)
+                // console.log(res.data)
 
             }
         }

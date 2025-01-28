@@ -25,7 +25,7 @@ export default function Register() {
                     name:data.name,
                     email: data.email,
                     role:data.role,
-                    photoUrl:user.photoURL
+                    photoUrl:data.photoUrl
                 }
                 axiosPublic.post('/users',userInfo)
                 .then(res=>{

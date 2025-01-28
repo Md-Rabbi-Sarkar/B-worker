@@ -27,7 +27,7 @@ export default function MySubmission() {
     const handleItemsPerPage =e =>{
       // console.log(e.target.value)
       const val = parseInt(e.target.value)
-      console.log(val)
+      // console.log(val)
       setItemsPerpage(val)
       setCurrentPage(0)
     }

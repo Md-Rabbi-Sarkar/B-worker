@@ -13,7 +13,7 @@ export default function States() {
     //           const info ={email:user.email}
     //  console.log(info)
           const res = await axiosSecure.get(`/workerStates?email=${user.email}`)
-          console.log(res.data)
+          // console.log(res.data)
           return res.data
         }
       })

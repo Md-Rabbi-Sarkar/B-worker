@@ -20,14 +20,14 @@ export default function WithDrawalForm() {
         }
     })
     const withdrawalCoin = workerCoin.coin / 20
-  console.log(withdrawalCoin)
+//   console.log(withdrawalCoin)
  const see = watch('withdrawCoin')
 
   const withdrawAmounts =see / 20
-  console.log(see,withdrawAmounts)
+//   console.log(see,withdrawAmounts)
  
   const onSubmit =async data =>{
-    console.log(data)
+    // console.log(data)
     const info = {
       workerEmail:user.email,
       workerName:user.displayName,

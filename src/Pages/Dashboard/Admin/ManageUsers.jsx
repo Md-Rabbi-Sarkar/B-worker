@@ -27,12 +27,12 @@ export default function ManageUsers() {
            email:email
         }
         const res=await axiosSecure.patch('makeRole',updateRole)
-        console.log(res.data)
+        // console.log(res.data)
         refetch()
     }
     const handleDelete =async (email)=>{
         const res = await axiosSecure.delete(`/userDelete?email=${email}`)
-        console.log(res.data)
+        // console.log(res.data)
         refetch()
     }
     return (

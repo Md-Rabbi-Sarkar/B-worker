@@ -18,7 +18,7 @@ export default function UpdateTask() {
         submissionInfo: data.submissionInfo
     }
     const res=await axiosSecure.put(`/updateTask/${task._id}`,updateInfo)
-        console.log(res.data)
+        // console.log(res.data)
         if(res.data.modifiedCount>0){
             Swal.fire({
                 position: "top-end",

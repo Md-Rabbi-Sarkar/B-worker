@@ -13,7 +13,7 @@ export default function ManageTasks() {
   })
   const handleDelete = async (id) => {
     const res = await axiosSecure.delete(`/taskDelete?id=${id}`)
-    console.log(res.data)
+    // console.log(res.data)
     refetch()
   }
   return (

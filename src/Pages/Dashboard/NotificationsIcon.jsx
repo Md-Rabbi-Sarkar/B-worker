@@ -12,13 +12,13 @@ export default function NotificationsIcon() {
     queryKey:['recentNotofication'],
     queryFn: async ()=>{
       const res = await axiosSecure.get(`/notificationsIcon?email=${user.email}`)
-      console.log(res.data)
+      // console.log(res.data)
       return res.data
     }
   })
   const handleClick= async () =>{
     const res = await axiosSecure.put(`/notiStatus?email=${user.email}`,{bal:'dd'})
-  console.log(res.data)
+  // console.log(res.data)
   }
   return (
     <div>

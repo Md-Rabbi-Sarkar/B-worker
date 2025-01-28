@@ -19,8 +19,8 @@ export default function BestWorkers() {
       <h1 className='text-5xl my-10'>Best Worker</h1>
       {bestWorker.map(worker => <div data-aos="flip-left" key={worker._id} className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+          <img className='w-1/2'
+            src={worker.photoURL}
             alt="Album" />
         </figure>
         <div className="card-body flex flex-col justify-center items-center">
