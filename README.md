@@ -1,28 +1,89 @@
-# React + Vite
+🌟 Overview
+Bworker is a freelance service marketplace where buyers can post jobs, workers can apply & complete them, and admins manage payments, withdrawals, and platform control.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Live Demo
+🔗 [Live Project Link](https://bworker-50df7.web.app/)
 
-Currently, two official plugins are available:
+🛠️ Technologies Used
+Frontend	Backend	Database	Authentication	Payments	Hosting
+React.js,	Node.js, Express.js	MongoDB	JWT / Firebase	/ Stripe /	Vercel 
+📌 Core Features
+✅ Buyer Dashboard
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Post new job listings
+Manage job applications
+Review completed tasks
+✅ Worker Dashboard
 
-# 1
-Website Name: "Bworker"
-# 2
-https://bworker-50df7.web.app/
-# 3
-Admin:mdrabbisarkar@gmail.com
-Password:111111
-# 4
-Website Feature:
-User-Friendly Registration and Profile Management,
-Task Marketplace
-Secure Payment Gateway
-Reward System and Payout Options
-Rating and Feedback System
-Task Matching
-Admin Dashboard for Platform Management
-Gamification Features
-Responsive Design and Mobile App Integration
-Customer Support and Dispute Resolution
+Browse & apply for jobs
+Submit completed work
+Withdraw earnings
+✅ Admin Panel
+
+Manage users (Workers & Buyers)
+Approve withdrawals & payments
+Monitor platform activities
+✅ Secure Payments
+
+Coin-based withdrawal system
+Integrated Stripe/PayPal support
+✅ Additional Features
+
+Secure JWT authentication
+Real-time notifications
+Modern, responsive UI/UX
+📥 Installation & Setup
+Follow these steps to run Bworker locally:
+
+1️⃣ Clone the Repository
+sh
+Copy
+Edit
+git clone https://github.com/your-username/bworker.git
+cd bworker
+2️⃣ Install Dependencies
+sh
+Copy
+Edit
+npm install  # For backend & frontend dependencies
+3️⃣ Start the Development Server
+sh
+Copy
+Edit
+npm run dev  # Runs frontend & backend
+4️⃣ Environment Variables
+Create a .env file and add your credentials:
+
+sh
+Copy
+Edit
+MONGO_URI=your-mongodb-uri  
+JWT_SECRET=your-secret-key  
+STRIPE_SECRET_KEY=your-stripe-key  
+📦 Dependencies
+json
+Copy
+Edit
+{
+  "frontend": ["react", "next.js", "tailwindcss"],
+  "backend": ["express", "mongodb", "jsonwebtoken"],
+  "payments": ["stripe", "paypal"],
+  "authentication": ["jwt", "firebase"]
+}
+📸 Screenshots
+🚀 Home Page
+
+📊 Admin Dashboard
+
+📜 Resources & Links
+🔹 Live Demo: Live Project
+🔹 API Documentation: Postman Collection
+🔹 Frontend Repo: GitHub Link
+🔹 Backend Repo: GitHub Link
+
+🤝 Contributing
+Want to contribute? Feel free to fork this repo and submit a pull request!
+
+📩 Contact: mdrabbisarkar70@gmail.com 
+
+🌟 Star this repo if you found it useful! 🚀✨
