@@ -13,7 +13,7 @@ export default function ExpensiveTask() {
         }
     })
   return (
-    <div >
+    <div className='mt-5' >
       <h1 className='text-5xl my-10 text-center '>-----Expensiv Task-----</h1>
       {expensivTask.map(task => <div data-aos="flip-left" key={task._id} className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
