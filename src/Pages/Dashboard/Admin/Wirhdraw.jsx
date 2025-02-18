@@ -4,7 +4,7 @@ import useAxiosSecure from '../../../Hooks/useAxiosSecure'
 
 export default function Wirhdraw() {
     const axiosSecuire = useAxiosSecure()
-    const {data: withdraw =[]}=useQuery({
+    const {data: withdraw =[], refetch}=useQuery({
         queryKey:['withdraw'],
         queryFn: async () =>{
             const res = await axiosSecuire.get('/withdraw')
@@ -18,7 +18,9 @@ export default function Wirhdraw() {
             workerCoin:withdrawCoin
         }
         const res = await axiosSecuire.put(`/withdrawApproved/${id}`,info)
-        // console.log(res.data)
+        console.log(res.data)
+
+        refetch()
     }
   return (
     <div className="overflow-x-auto mt-10">

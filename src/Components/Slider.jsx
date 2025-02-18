@@ -4,18 +4,18 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 export default function Slider() {
     return (
-        <Carousel>
-            <div data-aos="flip-left">
+        <Carousel className='w-2/3 mx-auto text-center'>
+            <div data-aos="flip-left" className='pb-10'>
                 <img src={slider1} />
                 <h1 className='text-3xl'>"Your Time, Your Earnings"</h1>
                 <p>Your Gateway to Micro Earnings</p>
             </div>
-            <div>
+            <div className='mb-10'>
                 <img src={slider1} />
                 <h1 className='text-3xl'>Complete Simple Tasks and Get Paid Instantly</h1>
                 <p>Simplify Tasks, Amplify Earnings</p>
             </div>
-            <div>
+            <div className='mb-10'>
                 <img src={slider1} />
                 <h1 className='text-3xl'>"Transform Spare Minutes into Extra Income"</h1>
                 <p>Where Every Task Pays Off</p>

@@ -18,9 +18,9 @@ export default function Addtask() {
     const navigate = useNavigate()
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit =async (data) => {
-        // console.log(data)
+        console.log(data)
         const totalPayableAmount = data.requiredWorks*data.payableAmount
-        // console.log(totalPayableAmount)
+        console.log(totalPayableAmount)
         if(coin.coins <totalPayableAmount){
              Swal.fire({
                 icon: "error",
@@ -36,7 +36,7 @@ export default function Addtask() {
                 'Content-Type':'multipart/form-data'
             }
         })
-        // console.log(res.data)
+        console.log(res.data)
         if(res.data.success){
             const taskInfo = {
                 email:user.email,
@@ -52,7 +52,14 @@ export default function Addtask() {
                 status:'pending'
             }
             const tasksRes = await axiosSecure.post('/taskItems',taskInfo)
-            // console.log(tasksRes.data)
+             Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Your successfully add task",
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
+            console.log(tasksRes.data)
         }
         
     };

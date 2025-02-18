@@ -28,7 +28,7 @@ export default function NotificationsIcon() {
                 />
         <button className="btn rounded-full">
         <IoIosNotifications />
-          <div  className="badge badge-secondary">{recentNotification.result
+          <div  className="badge badge-secondary">{recentNotification.length
             }</div>
         </button>
       </Container>

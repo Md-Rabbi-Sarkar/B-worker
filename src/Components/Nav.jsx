@@ -18,6 +18,8 @@ export default function Nav() {
     const navLink = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-Md-Rabbi-Sarkar'>Join as Developer</Link></li>
+        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/contact'>Contact</Link></li>
         {user ?
                             <>
                             <li><Link to='/dashboard'>Dashboard</Link></li>
@@ -40,7 +42,7 @@ export default function Nav() {
         localStorage.setItem("theme", newTheme);
       };
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-slate-500 border-2 fixed top-0 z-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -63,7 +65,7 @@ export default function Nav() {
                         {navLink}
                     </ul>
                 </div>
-                <Link className="btn btn-ghost text-xl">Bworker</Link>
+                <Link className="btn btn-ghost text-xl ml-5">Bworker</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -75,7 +77,7 @@ export default function Nav() {
           {theme === "dark" ? "🌞" : "🌙"}
         </button>
       </div>
-            <div className="navbar-end">
+            <div className="navbar-end mr-5">
                 {
                 user? 
                 <>

@@ -2,12 +2,15 @@ import { CardElement, Elements, PaymentElement, useElements, useStripe } from '@
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../../../Providers/AuthProvider'
 import useAxiosSecure from '../../../../Hooks/useAxiosSecure'
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 export default function CheckOutForm({coin}) {
     const [error, setError] = useState('')
     const stripe = useStripe()
     const {user} = useContext(AuthContext)
     const elements = useElements()
+    const navigate =useNavigate()
     const axiosSecuire = useAxiosSecure()
     const [clientSecret,steClientSecret] = useState('')
     const [transactionId, setTransactionId] = useState('')
@@ -56,7 +59,15 @@ export default function CheckOutForm({coin}) {
         else{
             console.log('payment Intent',paymentIntent)
             if(paymentIntent.status === 'succeeded'){
+
                 console.log('transaction id', paymentIntent.id)
+                 Swal.fire({
+                                position: "top-end",
+                                icon: "success",
+                                title: "You successfully pay for coin",
+                                showConfirmButton: false,
+                                timer: 1500
+                              });
                 setTransactionId(paymentIntent.id)
                 const payment ={
                     email: user.email,
@@ -67,6 +78,7 @@ export default function CheckOutForm({coin}) {
                 }
                 const res = await axiosSecuire.post('/payments',payment)
                 // console.log(res.data)
+                navigate('/dashboard/paymentHistory')
 
             }
         }

@@ -24,6 +24,8 @@ import Notifications from "../Pages/Dashboard/Worker/Notifications";
 import PaymentHistory from "../Pages/Dashboard/Buyer/PaymentHistory";
 import Error from "../Pages/Error";
 import Forbidden from "../Pages/Forbidden";
+import About from "../Components/About";
+import Contact from "../Components/Contact";
 
 export const router = createBrowserRouter([
    {
@@ -46,6 +48,14 @@ export const router = createBrowserRouter([
         {
             path:'/userCoin',
             element:<UserCoin></UserCoin>
+        },
+        {
+            path:'/about',
+            element:<About></About>
+        },
+        {
+            path:'/contact',
+            element:<Contact></Contact>
         }
     ]
    },

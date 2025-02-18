@@ -7,12 +7,16 @@ import 'aos/dist/aos.css';
 import News from '../Components/News';
 import Events from '../Components/Events';
 import About from '../Components/About';
+import BestBuyer from '../Components/BestBuyer';
+import ExpensiveTask from '../Components/ExpensiveTask';
 AOS.init();
 export default function Home() {
   return (
     <div >
       <Slider></Slider>
       <BestWorkers></BestWorkers>
+      <BestBuyer></BestBuyer>
+      <ExpensiveTask></ExpensiveTask>
       <Testimonial></Testimonial>
       <News></News>
       <Events></Events>

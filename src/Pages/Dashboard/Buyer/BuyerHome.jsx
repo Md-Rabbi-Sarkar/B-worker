@@ -2,11 +2,12 @@ import React, { useContext } from 'react'
 import useAxiosSecure from '../../../Hooks/useAxiosSecure'
 import { useQuery } from '@tanstack/react-query'
 import { AuthContext } from '../../../Providers/AuthProvider'
+import Swal from 'sweetalert2'
 
 export default function BuyerHome() {
   const axiosSecure = useAxiosSecure()
   const { user } = useContext(AuthContext)
-  const { data: buyerTask = [] } = useQuery({
+  const { data: buyerTask = [],refetch } = useQuery({
     queryKey: ['pendingTask'],
     queryFn: async () => {
       const res = await axiosSecure.get(`/buyerTotalTask?email=${user.email}`)
@@ -29,6 +30,14 @@ export default function BuyerHome() {
         status: 'unseen'
       }
       const res = await axiosSecure.post('/notifications', info)
+       Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "You successfully approve submission",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                    refetch()
       // console.log(res.data)
 
     }
@@ -45,6 +54,14 @@ export default function BuyerHome() {
         status: 'unseen'
       }
       const res = await axiosSecure.post('/notifications', info)
+       Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: "You successfully reject submission",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                    refetch()
       // console.log(res.data)
     }
   }
