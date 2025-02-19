@@ -26,6 +26,7 @@ import Error from "../Pages/Error";
 import Forbidden from "../Pages/Forbidden";
 import About from "../Components/About";
 import Contact from "../Components/Contact";
+import Singleservice from "../Pages/Singleservice";
 
 export const router = createBrowserRouter([
    {
@@ -56,6 +57,11 @@ export const router = createBrowserRouter([
         {
             path:'/contact',
             element:<Contact></Contact>
+        },
+        {
+            path:'/services/:id',
+            element:<Singleservice></Singleservice>,
+            loader:({params}) => fetch(`http://localhost:5000/expensivtaskDetails/${params.id}`)
         }
     ]
    },

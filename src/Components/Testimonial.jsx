@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 export default function Testimonial() {
   return (
-    <div>
-      <h1 className='text-5xl my-10'>Testimonial</h1>
+    <div className='my-10 mx-10'>
+      <h1 className='text-5xl text-center mb-10'>-----Testimonial-----</h1>
       <Swiper
       spaceBetween={50}
       slidesPerView={3}
