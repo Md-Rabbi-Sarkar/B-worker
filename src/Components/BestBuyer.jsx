@@ -14,8 +14,8 @@ export default function BestBuyer() {
     }
   })
   return (
-    <div className='bg-stone-50 p10'>
-      <h1 className='text-5xl my-10 text-center '>-----Best Buyer-----</h1>
+    <div className=' p10'>
+      <h1 className='text-5xl my-10 text-center underline p-5'>-Best Buyer-</h1>
     <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 justify-items-center'>
       
       {bestBuyer.map(buyer =>

@@ -15,7 +15,7 @@ export default function ExpensiveTask() {
     })
   return (
     <div >
-      <h1 className='text-5xl text-center my-10'>-----Expensiv Task-----</h1>
+      <h1 className='text-5xl text-center my-10 underline pb-5'>-Expensiv Task-</h1>
     <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 justify-items-center' >
       
       {expensivTask.map(task => 

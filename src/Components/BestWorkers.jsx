@@ -15,9 +15,9 @@ export default function BestWorkers() {
     }
   })
   return (
-    <div className='bg-zinc-50 p-10'>
-      <h1 className='text-5xl my-10 text-center '>-----Best Worker-----</h1>
-      <div className='grid grid-cols-1 lg:grid-cols-2 space-y-5 justify-items-center'>
+    <div className=' p-10'>
+      <h1 className='text-5xl my-10 text-center underline p-5 '>-Best Worker-</h1>
+      <div className='grid grid-cols-1 lg:grid-cols-2  space-y-5 justify-items-center'>
 
         {bestWorker.map(worker =>
           <div data-aos="flip-left" key={worker._id} className="card bg-base-100 w-96 shadow-xl">

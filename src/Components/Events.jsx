@@ -23,11 +23,11 @@ export default function Events() {
   ];
 
   return (
-    <div className='my-10 mx-10'>
+    <div className='my-10 mx-20 py-10'>
       <h1 className='text-5xl text-center mb-10'>-----Upcoming Events-----</h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
       {eventData.map((event, index) => (
-        <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden">
+        <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden p-10">
           <img src={event.image} alt={event.title} className="w-full h-40 object-cover" />
           <div className="p-4">
             <h3 className="text-lg font-semibold">{event.title}</h3>
