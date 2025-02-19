@@ -9,6 +9,7 @@ import Events from '../Components/Events';
 import About from '../Components/About';
 import BestBuyer from '../Components/BestBuyer';
 import ExpensiveTask from '../Components/ExpensiveTask';
+import Contact from '../Components/Contact';
 AOS.init();
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <News></News>
       <Events></Events>
       <About></About>
+      <Contact></Contact>
     </div>
   )
 }

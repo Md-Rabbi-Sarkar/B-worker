@@ -5,9 +5,10 @@ export default function SingleWorker() {
     const {_id,name,email,role,photoURL,coin} = useLoaderData()
     console.log(_id)
   return (
-    <div className="card glass w-96">
+    <div className="card glass w-1/2 my-20 mx-auto">
   <figure>
     <img
+    className='h-48 lg:h-96 rounded-lg'
       src={photoURL}
       alt="car!" />
   </figure>

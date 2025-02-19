@@ -17,7 +17,7 @@ export default function DashboardNav() {
         }
     })
     const navLink = <>
-        <div className='flex flex-col md:flex-row gap-3'>
+        <div className='flex flex-col md:flex-row gap-5'>
             <li>Coin {userInfo.coin} </li>
             <img className='rounded-full w-6 h-6' src={user?.photoURL} alt="" />
             <li>{userInfo.role} </li>

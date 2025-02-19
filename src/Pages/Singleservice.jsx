@@ -9,7 +9,8 @@ export default function Singleservice() {
         } = useLoaderData()
     // console.log(_id)
   return (
-    <div className="card glass w-96">
+    
+    <div className="card glass w-1/2 my-20 mx-auto">
   <figure>
     <img
       src={taskImageUrl}
