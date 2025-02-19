@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import useAxiosPublic from '../Hooks/useAxiosPublic'
+import { Link } from 'react-router-dom';
 
 export default function BestBuyer() {
   const axiosPublic = useAxiosPublic();
@@ -15,7 +16,7 @@ export default function BestBuyer() {
   return (
     <div className='bg-stone-50 p10'>
       <h1 className='text-5xl my-10 text-center '>-----Best Buyer-----</h1>
-    <div className='grid grid-cols-1 lg:grid-cols-2 space-y-5 justify-items-center'>
+    <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 justify-items-center'>
       
       {bestBuyer.map(buyer =>
         <div data-aos="flip-left" key={buyer._id} className="card bg-base-100 w-96 shadow-xl h-full">
@@ -29,21 +30,11 @@ export default function BestBuyer() {
             <h2 className="card-title">Buyer Name: {buyer.name}</h2>
             <p>Buyer Coin: {buyer.coin}</p>
             <div className="card-actions">
-              <button className="btn btn-primary">Buyer Details</button>
+              <Link to={`singleBuyer/${buyer._id}`}><button className="btn btn-primary">Buyer Details</button></Link>
             </div>
           </div>
         </div>
-        // <div data-aos="flip-left" key={buyer._id} className="card lg:card-side bg-base-100 shadow-xl">
-        //   <figure>
-        //     <img className='w-1/2'
-        //       src={buyer.photoURL}
-        //       alt="Album" />
-        //   </figure>
-        //   <div className="card-body flex flex-col justify-center items-center">
-        //     <h2>Worker Name: {buyer.name}</h2>
-        //     <p>Worker Coin: {buyer.coin}</p>
-        //   </div>
-        // </div>
+        
       )}
     </div>
     </div>

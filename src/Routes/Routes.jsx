@@ -27,6 +27,8 @@ import Forbidden from "../Pages/Forbidden";
 import About from "../Components/About";
 import Contact from "../Components/Contact";
 import Singleservice from "../Pages/Singleservice";
+import SingleWorker from "../Pages/SingleWorker";
+import SingleBuyer from "../Pages/SingleBuyer";
 
 export const router = createBrowserRouter([
    {
@@ -62,6 +64,16 @@ export const router = createBrowserRouter([
             path:'/services/:id',
             element:<Singleservice></Singleservice>,
             loader:({params}) => fetch(`http://localhost:5000/expensivtaskDetails/${params.id}`)
+        },
+        {
+            path:'/singleWorker/:id',
+            element:<SingleWorker></SingleWorker>,
+            loader:({params})=>fetch(`http://localhost:5000/singleWorker/${params.id}`)
+        },
+        {
+            path:'/singleBuyer/:id',
+            element:<SingleBuyer></SingleBuyer>,
+            loader:({params})=>fetch(`http://localhost:5000/singleBuyer/${params.id}`)
         }
     ]
    },

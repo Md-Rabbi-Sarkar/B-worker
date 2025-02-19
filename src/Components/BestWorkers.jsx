@@ -31,22 +31,10 @@ export default function BestWorkers() {
               <h2 className="card-title">Worker Name: {worker.name}</h2>
               <p>Worker Coin: {worker.coin}</p>
               <div className="card-actions">
-                <button className="btn btn-primary">Worker Details</button>
+                <Link to={`singleWorker/${worker._id}`}><button className="btn btn-primary">Worker Details</button></Link>
               </div>
             </div>
           </div>
-
-          // <div data-aos="flip-left" key={worker._id} className="card lg:card-side bg-base-100 shadow-xl">
-          //   <figure>
-          //     <img className='w-1/2'
-          //       src={worker.photoURL}
-          //       alt="Album" />
-          //   </figure>
-          //   <div className="card-body flex flex-col justify-center items-center">
-          //     <h2>Worker Name: {worker.name}</h2>
-          //     <p>Worker Coin: {worker.coin}</p>
-          //   </div>
-          // </div>
         )}
 
       </div>

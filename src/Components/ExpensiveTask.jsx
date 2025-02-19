@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 export default function ExpensiveTask() {
     const axiosPublic = useAxiosPublic()
-    const [singleTask,setSingleTask] = useState()
     const {data: expensivTask=[]} = useQuery({
         queryKey:['expensivTask'],
         queryFn: async() =>{
@@ -35,17 +34,7 @@ export default function ExpensiveTask() {
         </div>
       </div>
     </div>
-      // <div data-aos="flip-left" key={task._id} className="card lg:card-side bg-base-100 shadow-xl">
-      //   <figure>
-      //     <img className='w-1/2'
-      //       src={task.taskImageUrl}
-      //       alt="Album" />
-      //   </figure>
-      //   <div className="card-body flex flex-col justify-center items-center">
-      //     <h2>Task Title: {task.taskTitle}</h2>
-      //     <p>Payable Amount: {task.payableAmount}</p>
-      //   </div>
-      // </div>
+      
     )}
     </div>
     </div>
