@@ -67,8 +67,8 @@ export default function BuyerHome() {
   }
   return (
     <div>
-      <div>
-        <div className="stats shadow">
+      <div className='w-full mb-10 mx-auto text-center'>
+        <div className="w-full mb-10 mx-auto text-center stats shadow p-10">
           <div className="stat">
             <div className="stat-figure text-secondary">
               <svg

@@ -63,20 +63,20 @@ export default function WithDrawalForm() {
 
   return (
     <div>
-      <div className='mb-5'>
-      <div className="stats bg-primary text-primary-content">
-            <div className="stat">
+      
+      <div className="  flex flex-col lg:flex-row gap-10">
+            <div className="stat bg-emerald-400 p-10 rounded-lg">
                 <div className="stat-title">Account balance</div>
                 <div className="stat-value">Coin: {workerCoin.coin}</div>
                 
             </div>
 
-            <div className="stat">
+            <div className="stat bg-emerald-400 p-10 rounded-lg">
                 <div className="stat-title">WithDrawals balance</div>
                 <div className="stat-value">${withdrawalCoin}</div>
                 
             </div>
-        </div>
+        
       </div>
       <div>
          <div className="hero bg-base-200 min-h-screen">

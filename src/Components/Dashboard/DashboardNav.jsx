@@ -27,7 +27,7 @@ export default function DashboardNav() {
 
     </>
     return (
-        <div className="navbar bg-slate-500">
+        <div className="navbar bg-slate-800 text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,14 +50,14 @@ export default function DashboardNav() {
                         {navLink}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl">Beworker</Link>
+                <Link to='/' className="btn btn-ghost text-xl ml-10">Beworker</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navLink}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end mr-10">
                 <Link to='/dashboard/notifications' className="btn">Notification</Link>
             </div>
         </div>

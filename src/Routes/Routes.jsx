@@ -29,8 +29,8 @@ import Contact from "../Components/Contact";
 import Singleservice from "../Pages/Singleservice";
 import SingleWorker from "../Pages/SingleWorker";
 import SingleBuyer from "../Pages/SingleBuyer";
-
 export const router = createBrowserRouter([
+    
    {
     path:'/',
     element:<Main></Main>,

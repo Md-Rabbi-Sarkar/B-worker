@@ -18,9 +18,16 @@ export default function Notifications() {
     })
   return (
     <div className='flex flex-col gap-5'>
-        {notifications.map((item,index)=><div key={item._id} className='border'>
-            <p>{item.message}</p>
-        </div>)}
+        
+        {notifications.length === 0 ? (
+  <p className='text-center py-10 text-2xl'>You have no notifications</p>
+) : (
+  notifications.map((item, index) => (
+    <div key={item._id} className="border">
+      <p>{item.message}</p>
+    </div>
+  ))
+)}
     </div>
   )
 }

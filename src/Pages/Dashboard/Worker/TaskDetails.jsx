@@ -48,7 +48,7 @@ export default function TaskDetails() {
         }
     }
     return (
-        <div className="card bg-base-100 w-96 shadow-xl">
+        <div className="card bg-base-100 w-96 shadow-xl items-center mx-auto">
             <figure className="px-10 pt-10">
                 <img
                     src={taskImageUrl}

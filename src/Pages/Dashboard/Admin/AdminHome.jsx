@@ -17,8 +17,8 @@ export default function AdminHome() {
     }
   })
   return (
-    <div>
-      <div className="stats shadow">
+    <div >
+      <div className="w-full mb-10 mx-auto text-center stats shadow p-10">
         <div className="stat">
           <div className="stat-figure text-secondary">
           <CiCoins1 className='text-4xl'/>

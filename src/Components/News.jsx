@@ -21,7 +21,7 @@ export default function News() {
 
   return (
     <div className='my-10 mx-20 py-10'>
-      <h1 className='text-5xl text-center mb-10'>-----Latest News-----</h1>
+      <h1 className='text-5xl text-center mb-10 underline pb-5'>-Latest News-</h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
       {newsData.map((item, index) => (
         <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden p-10">

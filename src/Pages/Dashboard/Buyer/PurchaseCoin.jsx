@@ -14,7 +14,7 @@ export default function PurchaseCoin() {
       }
     
     return (
-        <div  className='grid grid-cols-2 gap-5'>
+        <div  className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
             {cards.map(card=>
             <div onClick={()=>handleClidk(card.coin)} key={card.id} className="card bg-primary text-primary-content w-96">
                 <div className="card-body">

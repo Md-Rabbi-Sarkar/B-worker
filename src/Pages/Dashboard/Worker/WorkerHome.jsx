@@ -19,8 +19,8 @@ export default function WorkerHome() {
   })
   return (
     <div>
-      <div className='mb-10
-      '>
+      <div className='w-full mb-10 mx-auto text-center'>
+     
         <States></States>
       </div>
       <div className="overflow-x-auto">

@@ -42,7 +42,7 @@ export default function Nav() {
         localStorage.setItem("theme", newTheme);
       };
     return (
-        <div className="navbar bg-slate-500 border-2 fixed top-0 z-10">
+        <div className="navbar text-white bg-slate-800 border-2 fixed top-0 z-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -73,20 +73,20 @@ export default function Nav() {
                 </ul>
             </div>
             <div className="theme-toggle flex items-end ml-5">
-        <button onClick={toggleTheme}>
+        <li className='list-none ' onClick={toggleTheme}>
           {theme === "dark" ? "🌞" : "🌙"}
-        </button>
+        </li>
       </div>
             <div className="navbar-end mr-5">
                 {
                 user? 
                 <>
-                <button onClick={handleLogOut} className='btn'><Link to='/logout'>LogOut</Link></button>
+                <li onClick={handleLogOut} className='list-none'><Link to='/logout'>LogOut</Link></li>
                 </>
                 :
                 <>
-                <button className='mr-2 btn'><Link to='/login'>LogIn</Link></button>
-                <button className='btn'><Link to='/register'>Register</Link></button></>
+                <li className='mr-5 list-none'><Link to='/login'>LogIn</Link></li>
+                <li className='list-none'><Link to='/register'>Register</Link></li></>
                 }
             </div>
         </div>
