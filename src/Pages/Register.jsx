@@ -5,7 +5,6 @@ import { Result } from 'postcss';
 import { useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import useAxiosPublic from '../Hooks/useAxiosPublic';
-import Swal from 'sweetalert2';
 
 export default function Register() {
     const {createUser,updateUserProfile,googleSignIn} = useContext(AuthContext)
@@ -34,12 +33,7 @@ export default function Register() {
                     }
                 })
             })
-            .catch(error =>Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Something went wrong!",
-                footer: '<a href="#">Why do I have this issue?</a>'
-              });)
+            .catch(error =>console.log(error))
         })
     };
     const handleGoogleSignIn =() =>{
