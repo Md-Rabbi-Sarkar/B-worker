@@ -12,7 +12,6 @@ export default function Mytasks() {
         queryKey: ['myTasks', user?.email],
         queryFn: async () => {
             const res = await axiosSecure.get(`/mytasks/${user.email}`)
-            // console.log(res.data)
             return res.data
         }
         
@@ -32,7 +31,6 @@ export default function Mytasks() {
           }).then(async(result) => {
             if (result.isConfirmed) {
                 const res = await axiosSecure.put(`/deleteTask/${id}`,update)
-        console.log(res.data)
         refetch()
               Swal.fire({
                 title: "Deleted!",

@@ -18,16 +18,10 @@ export default function MySubmission() {
   })
     
     const totaldata = submissionTask.length
-    // console.log(totaldata)
-    // const itemPerPage = 1
     const numberOfPage = Math.ceil(totaldata/itemsPerPage)
-    // console.log(numberOfPage)
     const pages = [ ...Array(numberOfPage).keys()]
-    // console.log(pages)
     const handleItemsPerPage =e =>{
-      // console.log(e.target.value)
       const val = parseInt(e.target.value)
-      // console.log(val)
       setItemsPerpage(val)
       setCurrentPage(0)
     }

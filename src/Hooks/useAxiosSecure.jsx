@@ -3,7 +3,7 @@ import axios from 'axios'
 import { AuthContext } from '../Providers/AuthProvider'
 import { useNavigate } from 'react-router-dom'
 const axiosSecure = axios.create({
-    baseURL: 'https://bworker-server.vercel.app'
+    baseURL: 'http://localhost:5000'
 })
 export default function useAxiosSecure() {
     const { logOut } = useContext(AuthContext)
@@ -19,7 +19,6 @@ export default function useAxiosSecure() {
         return response
     }, async (error) => {
         const status = error.response.status
-        console.log('status error', status)
         if (status === 400 || status === 401) {
             await logOut()
             navigate('/login')

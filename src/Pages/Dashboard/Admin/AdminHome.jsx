@@ -12,7 +12,6 @@ export default function AdminHome() {
     queryKey: ['totalCount'],
     queryFn: async () => {
       const res = await axiosSecure.get('/admin/totalInfoCount')
-      // console.log(res.data)
       return res.data
     }
   })

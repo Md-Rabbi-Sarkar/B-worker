@@ -18,9 +18,7 @@ export default function Addtask() {
     const navigate = useNavigate()
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit =async (data) => {
-        console.log(data)
         const totalPayableAmount = data.requiredWorks*data.payableAmount
-        console.log(totalPayableAmount)
         if(coin.coins <totalPayableAmount){
              Swal.fire({
                 icon: "error",
@@ -36,7 +34,6 @@ export default function Addtask() {
                 'Content-Type':'multipart/form-data'
             }
         })
-        console.log(res.data)
         if(res.data.success){
             const taskInfo = {
                 email:user.email,
@@ -59,7 +56,6 @@ export default function Addtask() {
                             showConfirmButton: false,
                             timer: 1500
                           });
-            console.log(tasksRes.data)
         }
         
     };

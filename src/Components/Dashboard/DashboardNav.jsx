@@ -12,7 +12,6 @@ export default function DashboardNav() {
         queryKey:['userInfo'],
         queryFn: async () =>{
             const res = await axiosSecure.get(`/userInfo?email=${user.email}`)
-            // console.log(res.data)
             return res.data
         }
     })

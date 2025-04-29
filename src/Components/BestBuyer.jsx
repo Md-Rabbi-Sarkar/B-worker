@@ -9,7 +9,6 @@ export default function BestBuyer() {
     queryKey: ['bestbuyer'],
     queryFn: async () => {
       const res = await axiosPublic.get('/bestBuyer')
-      console.log(res.data)
       return res.data
     }
   })

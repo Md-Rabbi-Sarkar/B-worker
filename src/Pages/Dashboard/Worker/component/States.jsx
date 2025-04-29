@@ -10,10 +10,7 @@ export default function States() {
   const { data: workerpendingTask = [] } = useQuery({
     queryKey: ['workerpendingTask'],
     queryFn: async () => {
-      //           const info ={email:user.email}
-      //  console.log(info)
       const res = await axiosSecure.get(`/workerStates?email=${user.email}`)
-      // console.log(res.data)
       return res.data
     }
   })

@@ -5,6 +5,7 @@ import { Result } from 'postcss';
 import { useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import useAxiosPublic from '../Hooks/useAxiosPublic';
+import Swal from 'sweetalert2';
 
 export default function Register() {
     const {createUser,updateUserProfile,googleSignIn} = useContext(AuthContext)
@@ -13,11 +14,9 @@ export default function Register() {
     const axiosPublic = useAxiosPublic()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data =>{
-        console.log(data)
         createUser(data.email,data.password)
         .then(result =>{
             const user = result.user
-            console.log(user)
             navigate('/')
             updateUserProfile(data.name,data.photoUrl)
             .then(()=>{
@@ -30,20 +29,23 @@ export default function Register() {
                 axiosPublic.post('/users',userInfo)
                 .then(res=>{
                     if(res.data.insertedId){
-                        console.log('user added database')
                         reset()
                         navigate('/')
                     }
                 })
             })
-            .catch(error =>console.log(error))
+            .catch(error =>Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });)
         })
     };
     const handleGoogleSignIn =() =>{
         googleSignIn()
         .then(result=>{
             const user = result.user
-            console.log(user)
             navigate('/')
         })
     }

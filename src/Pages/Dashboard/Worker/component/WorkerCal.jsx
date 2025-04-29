@@ -10,12 +10,10 @@ export default function WorkerCal() {
         queryKey: ['workerCoin'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/workerCal?email=${user.email}`)
-            // console.log(res.data)
             return res.data
         }
     })
     const withdrawalCoin = workerCoin.coin / 20
-    // console.log(withdrawalCoin)
     return (
         <div className="stats bg-primary text-primary-content">
             <div className="stat">

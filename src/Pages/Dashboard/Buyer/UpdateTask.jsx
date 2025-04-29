@@ -8,17 +8,14 @@ export default function UpdateTask() {
     const task = useLoaderData()
     const axiosSecure = useAxiosSecure()
     const navigate = useNavigate()
-    // console.log(task)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit =async (data) =>{
-        // console.log(data)
         const updateInfo ={
         taskTitle: data.taskTitle,
         taskDetail: data.taskDetail,
         submissionInfo: data.submissionInfo
     }
     const res=await axiosSecure.put(`/updateTask/${task._id}`,updateInfo)
-        // console.log(res.data)
         if(res.data.modifiedCount>0){
             Swal.fire({
                 position: "top-end",

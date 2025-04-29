@@ -11,7 +11,6 @@ export default function BuyerHome() {
     queryKey: ['pendingTask'],
     queryFn: async () => {
       const res = await axiosSecure.get(`/buyerTotalTask?email=${user.email}`)
-      // console.log(buyerTask)
       return res.data
     }
   })
@@ -21,7 +20,6 @@ export default function BuyerHome() {
       payAbleAmount: payAmount
     }
     const res = await axiosSecure.put(`/approveTask/${id}`, info)
-    // console.log(res.data)
     if (res.data.result.modifiedCount > 0) {
       const info = {
         message: `You have earned ${payAmount} from ${buyerName} for completing ${taskTitle}`,
@@ -38,14 +36,12 @@ export default function BuyerHome() {
                       timer: 1500
                     });
                     refetch()
-      // console.log(res.data)
 
     }
   }
   const handleDelete = async (id, email, taskTitle, workerEmail, payableAmount, buyerName) => {
     const info = { email }
     const res = await axiosSecure.put(`/rejectTask/${id}`, info)
-    // console.log(res.data)
     if (res.data.result.modifiedCount > 0) {
       const info = {
         message: `You are rejected the Taskname ${taskTitle} by ${buyerName}`,
@@ -62,7 +58,6 @@ export default function BuyerHome() {
                       timer: 1500
                     });
                     refetch()
-      // console.log(res.data)
     }
   }
   return (

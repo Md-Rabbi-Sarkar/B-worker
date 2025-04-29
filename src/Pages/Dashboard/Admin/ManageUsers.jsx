@@ -9,7 +9,6 @@ export default function ManageUsers() {
 
 
     const [selectValue, setSelectValue] = useState("");
-    //    console.log(selectedValue)
     const { data: allUsers = [],refetch } = useQuery({
         queryKey: ['allusers'],
         queryFn: async () => {
@@ -20,19 +19,15 @@ export default function ManageUsers() {
     const handleChange = async (e, email) => {
         e.preventDefault()
         const value = e.target.value
-        
-        // console.log(value, email)
         const updateRole = {
             value,
            email:email
         }
         const res=await axiosSecure.patch('makeRole',updateRole)
-        // console.log(res.data)
         refetch()
     }
     const handleDelete =async (email)=>{
         const res = await axiosSecure.delete(`/userDelete?email=${email}`)
-        // console.log(res.data)
         refetch()
     }
     return (

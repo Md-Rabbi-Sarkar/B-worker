@@ -15,19 +15,15 @@ export default function WithDrawalForm() {
         queryKey: ['workerCoin'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/workerCal?email=${user.email}`)
-            // console.log(res.data)
             return res.data
         }
     })
     const withdrawalCoin = workerCoin.coin / 20
-//   console.log(withdrawalCoin)
  const see = watch('withdrawCoin')
 
   const withdrawAmounts =see / 20
-//   console.log(see,withdrawAmounts)
  
   const onSubmit =async data =>{
-    // console.log(data)
     const info = {
       workerEmail:user.email,
       workerName:user.displayName,
@@ -55,7 +51,6 @@ export default function WithDrawalForm() {
                         status: 'unseen'
                       }
                       const res = await axiosSecure.post('/notifications', info)
-                      console.log(res.data)
               }
 
     }

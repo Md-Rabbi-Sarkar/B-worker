@@ -7,7 +7,6 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Getway_pK)
 export default function Payment() {
     const location = useLocation()
     const coin = location.state?.coin
-    console.log(coin)
   return (
     <div>
         <Elements stripe={stripePromise}>

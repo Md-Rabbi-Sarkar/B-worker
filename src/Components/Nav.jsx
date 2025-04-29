@@ -2,17 +2,22 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Providers/AuthProvider'
 import useCoin from '../Hooks/useCoin'
+import Swal from 'sweetalert2'
 
 export default function Nav() {
     const {user,logOut} =useContext(AuthContext)
     const [theme, setTheme] = useState("light")
     const [coin] =useCoin()
-    // console.log(coin)
     const navigate = useNavigate()
     const handleLogOut =() =>{
         logOut()
         .then(()=>{})
-        .catch(error=>console.log(error))
+        .catch(error=>Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          });)
         navigate('/')
     }
     const navLink = <>

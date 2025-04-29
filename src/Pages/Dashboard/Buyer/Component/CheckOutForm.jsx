@@ -18,11 +18,9 @@ export default function CheckOutForm({coin}) {
         if(coin>0){
         axiosSecuire.post('/create-payment-intent',{price:coin})
         .then(res=>{
-          console.log(res.data.clientSecret)
             steClientSecret(res.data.clientSecret)
         })}
     },[axiosSecuire,coin])
-    // console.log(coin)
     const handleSubmit=async (e)=>{
       e.preventDefault()
         if(!stripe || !elements){
@@ -77,7 +75,6 @@ export default function CheckOutForm({coin}) {
                     status:'pending'
                 }
                 const res = await axiosSecuire.post('/payments',payment)
-                // console.log(res.data)
                 navigate('/dashboard/paymentHistory')
 
             }

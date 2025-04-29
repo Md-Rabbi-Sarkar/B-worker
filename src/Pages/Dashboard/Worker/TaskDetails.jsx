@@ -11,7 +11,6 @@ export default function TaskDetails() {
         taskImageUrl, email, buyerName, status, name } = useLoaderData()
     const { user } = useContext(AuthContext)
     const axiosSecure = useAxiosSecure()
-    // console.log(taskDetail)
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = async (data) => {
         const submitInfo = {
@@ -44,7 +43,6 @@ export default function TaskDetails() {
                 status: 'unseen'
               }
               const res = await axiosSecure.post('/notifications', info)
-              // console.log(res.data)
         }
     }
     return (

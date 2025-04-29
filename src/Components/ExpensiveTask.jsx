@@ -9,7 +9,6 @@ export default function ExpensiveTask() {
         queryKey:['expensivTask'],
         queryFn: async() =>{
             const res = await axiosPublic.get('/expensivTask')
-            console.log(res.data)
             return res.data
         }
     })

@@ -63,17 +63,17 @@ export const router = createBrowserRouter([
         {
             path:'/services/:id',
             element:<Singleservice></Singleservice>,
-            loader:({params}) => fetch(`https://bworker-server.vercel.app/expensivtaskDetails/${params.id}`)
+            loader:({params}) => fetch(`http://localhost:5000/expensivtaskDetails/${params.id}`)
         },
         {
             path:'/singleWorker/:id',
             element:<SingleWorker></SingleWorker>,
-            loader:({params})=>fetch(`https://bworker-server.vercel.app/singleWorker/${params.id}`)
+            loader:({params})=>fetch(`http://localhost:5000/singleWorker/${params.id}`)
         },
         {
             path:'/singleBuyer/:id',
             element:<SingleBuyer></SingleBuyer>,
-            loader:({params})=>fetch(`https://bworker-server.vercel.app/singleBuyer/${params.id}`)
+            loader:({params})=>fetch(`http://localhost:5000/singleBuyer/${params.id}`)
         }
     ]
    },
@@ -111,7 +111,7 @@ export const router = createBrowserRouter([
         {
             path:'updateTask/:id',
             element:<UpdateTask></UpdateTask>,
-            loader:({params}) =>fetch(`https://bworker-server.vercel.app/updateTask/${params.id}`)
+            loader:({params}) =>fetch(`http://localhost:5000/updateTask/${params.id}`)
         },
         {
             path:'purchaseCoin',
@@ -133,12 +133,12 @@ export const router = createBrowserRouter([
         {
             path:'taskList',
             element:<TaskList></TaskList>,
-            loader:()=> fetch('https://bworker-server.vercel.app/taskList')
+            loader:()=> fetch('http://localhost:5000/taskList')
         },
         {
             path:'taskDetails/:id',
             element:<TaskDetails></TaskDetails>,
-            loader:({params})=>fetch(`https://bworker-server.vercel.app/tsskDetails/${params.id}`)
+            loader:({params})=>fetch(`http://localhost:5000/tsskDetails/${params.id}`)
         },
         {
             path:'mySubmission',

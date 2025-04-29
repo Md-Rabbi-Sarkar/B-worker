@@ -11,11 +11,9 @@ export default function Login() {
     const from=location.state?.from?.pathname ||'/'
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data =>{
-        console.log(data)
         signIn(data.email,data.password)
         .then(result =>{
             const user = result.user 
-            console.log(user)
             navigate(from,{replace:true})
         })
     };
@@ -23,7 +21,6 @@ export default function Login() {
         googleSignIn()
         .then(result=>{
             const user = result.user
-            console.log(user)
             navigate(from,{replace:true})
         })
     }
@@ -44,7 +41,7 @@ export default function Login() {
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email"  {...register("email", { required: true })} placeholder="email" className="input input-bordered" required />
-                            {errors.name && <span>This field is required</span>}
+                            {errors.email && <span>This field is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">

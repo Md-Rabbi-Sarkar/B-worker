@@ -8,7 +8,6 @@ export default function Wirhdraw() {
         queryKey:['withdraw'],
         queryFn: async () =>{
             const res = await axiosSecuire.get('/withdraw')
-            //  console.log(res.data)
             return res.data
         }
     })
@@ -18,7 +17,6 @@ export default function Wirhdraw() {
             workerCoin:withdrawCoin
         }
         const res = await axiosSecuire.put(`/withdrawApproved/${id}`,info)
-        console.log(res.data)
 
         refetch()
     }
