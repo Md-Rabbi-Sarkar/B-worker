@@ -13,7 +13,7 @@ import Contact from '../Components/Contact';
 AOS.init();
 export default function Home() {
   return (
-    <div >
+    <div className='bg-slate-100'>
       <Slider></Slider>
       <BestWorkers></BestWorkers>
       <BestBuyer></BestBuyer>
