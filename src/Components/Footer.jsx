@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className="footer bg-slate-500 text-neutral-content p-12">
+    <footer className="footer bg-slate-800 text-neutral-content p-10">
   <aside>
     <svg
       width="50"
